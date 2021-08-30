@@ -12,7 +12,7 @@ return(
     <p>
     {this.props.detales}
     </p>
-    <img src={this.props.imgUrl} alt=""/>
+    <img src={this.props.imgUrl} alt={this.props.title}/>
 
 
     </div>
