@@ -1,7 +1,7 @@
 import React from 'react';
 
-import logo from './logo.svg';
-
+// import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Main from './components/main';
 import Header from './components/headr';
