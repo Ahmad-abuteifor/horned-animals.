@@ -8,6 +8,7 @@ import Header from './components/headr';
 import Footer from './components/footer';
 import SelectedBeates from './components/SelectedBeast';
 import array from './assets/data.json';
+
 class App extends React.Component {
 
 
@@ -16,7 +17,9 @@ super(props)
 this.state={
   show:false,
   dataHorn:array,
-  selectedHorn:{}
+  selectedHorn:{},
+
+  
 
 }  }
 
@@ -28,7 +31,16 @@ this.state={
 }
 
 
+// typechoosing=(horns)=>{
+// this.state.dataHorn.filter(value=>{
+//   if(value.horns==horns){
+//     this.setState({chooseType:value})
+//   }
+  
+// })
 
+
+// }
 
 
 
@@ -52,12 +64,16 @@ update=()=>{
     return (
       <div>
         <Header />
+        
+        {/* <HorneForm
+       typechoosing={this.typechoosing} /> */}
 
         <Main 
 
 // handleClose={this.handleClose}
 update={this.update}
 filterFunction={this.filterFunction}
+typechoosing={this.typechoosing}
         />
 <SelectedBeates 
 show={this.state.show}
