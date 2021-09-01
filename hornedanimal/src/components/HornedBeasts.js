@@ -33,6 +33,11 @@ class HornedBeasts extends React.Component {
   }
 
 
+  
+
+
+
+
 
 
 
@@ -40,15 +45,9 @@ class HornedBeasts extends React.Component {
 
   render() {
     return (
+      <div >
 
-
-
-
-
-
-      <div>
-
-        <Card style={{ width: '18rem' }} onClick={this.filterFunction}>
+        <Card style={{ width: '18rem'  } } onClick={this.filterFunction}  >
           <Card.Img variant="top" src={this.props.imgUrl} onClick={this.props.update}  />
           <Card.Body>
             <Card.Title> {this.props.title}</Card.Title>

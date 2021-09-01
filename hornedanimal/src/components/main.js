@@ -1,58 +1,74 @@
 import React from 'react';
-
 import HornedBeasts from './HornedBeasts';
 import SelectedBeates from './SelectedBeast';
+// import Form from 'react-bootstrap/Form'
+
 import array from './../assets/data.json';
 
-// let dataArray = array.map(
-//     (elemnt) => {
-//         return <HornedBeasts
+import HorneForm from './HorneForm'
 
-//             title={elemnt.title}
-//             detales={elemnt.description}
-//             imgUrl={elemnt.image_url}
-
-//             handleClose={elemnt.props.handleClose}
-
-
-
-//         />
-//     }
-
-
-
-// )
 
 class Main extends React.Component {
 
-   
+  
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            chooseType: []
+        }
+    }
+
+    typechoosing = (horns) => {
+        array.filter(value => {
+            if (value.horns == horns) {
+                this.setState({ chooseType: value })
+            }
+
+        })
+
+
+    }
+
     render() {
         return (
 
-           
-            <main>
-                
 
-                 
-                { array.map((value,index) => {
-                    return(
-                 <HornedBeasts
-        
-                    title={value.title}
-                    detales={value.description}
-                    imgUrl={value.image_url}
-                    update={this.props.update}
-                    filterFunction={this.props.filterFunction}
+            <main>
+
+                <HorneForm
+                    typechoosing={this.typechoosing} 
+                
                     />
+
+
+                {array.map((value, index) => {
+                    return (
+                      
+
+
+
+                        <HornedBeasts
+
+                            title={value.title}
+                            detales={value.description}
+                            imgUrl={value.image_url}
+                            horneNum={value.horns}
+                            update={this.props.update}
+                            filterFunction={this.props.filterFunction}
+                        typechoosing={this.typechoosing}
+                        />
+
+
+
                     )
                 })
-        
-            } 
+                }
 
 
-        
-                
-        
+
+
+
 
 
 
