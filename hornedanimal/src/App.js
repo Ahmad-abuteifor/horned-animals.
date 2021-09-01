@@ -6,16 +6,64 @@ import './App.css';
 import Main from './components/main';
 import Header from './components/headr';
 import Footer from './components/footer';
+import SelectedBeates from './components/SelectedBeast';
+import array from './assets/data.json';
 class App extends React.Component {
 
+
+  constructor(props){
+super(props)
+this.state={
+  show:false,
+  dataHorn:array,
+  selectedHorn:{}
+
+}  }
+
+ handleClose=()=>{
+
+  this.setState({
+    show:!this.state.show
+  })
+}
+
+
+
+
+
+
+filterFunction=(title)=>{
+this.state.dataHorn.filter(value=>{
+ if(value.title===title){
+  this.setState({selectedHorn:value,show:true}) 
+
+ }
+  
+})
+}
+
+  
+update=()=>{
+  this.setState({show:true})
+
+}
   render() {
 
     return (
       <div>
         <Header />
 
-        <Main />
+        <Main 
 
+// handleClose={this.handleClose}
+update={this.update}
+filterFunction={this.filterFunction}
+        />
+<SelectedBeates 
+show={this.state.show}
+handleClose={this.handleClose}
+selectedHorn={this.state.selectedHorn}
+/>
 
         <Footer />
 
