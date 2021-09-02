@@ -31,6 +31,16 @@ this.state={
 }
 
 
+// typechoosing=(horns)=>{
+// this.state.dataHorn.filter(value=>{
+//   if(value.horns==horns){
+//     this.setState({chooseType:value})
+//   }
+  
+// })
+
+
+// }
 
 
 
@@ -63,8 +73,7 @@ update=()=>{
 // handleClose={this.handleClose}
 update={this.update}
 filterFunction={this.filterFunction}
-   dataHorn= {this.state.dataHorn}
-
+typechoosing={this.typechoosing}
         />
 <SelectedBeates 
 show={this.state.show}
