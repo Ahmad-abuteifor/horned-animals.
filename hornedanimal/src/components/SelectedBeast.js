@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal'  
 import Button from 'react-bootstrap/Button'
-import Image from 'react-bootstrap/Image'
+
 
 class SelectedBeates extends React.Component{
 
@@ -17,10 +17,9 @@ class SelectedBeates extends React.Component{
                 keyboard={false}
               >
                 <Modal.Header closeButton>
-                  <Modal.Title>{this.props.selectedHorn.title}</Modal.Title>
+                  <Modal.Title> {this.props.selectedHorn.title}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body >
-                <Image   src={this.props.selectedHorn.image_url} roundedCircle  />
+                <Modal.Body>
                   
                 {this.props.selectedHorn.description}
                 </Modal.Body>
@@ -29,7 +28,7 @@ class SelectedBeates extends React.Component{
 >
                     Close
                   </Button>
-              
+                  {/* <Button variant="primary">Understood</Button> */}
                 </Modal.Footer>
               </Modal>
             </>
